@@ -1,0 +1,27 @@
+service: api
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: ${env:ENVIRONMENT}
+  region: ${env:REGION}
+  timeout: 30
+  memorySize: 256
+  lambdaHashingVersion: 20201221
+  tracing:
+    apiGateway: true
+    lambda: true
+  environment:
+    NODE_ENV: ${env:NODE_ENV}
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+functions:
+  hello:
+    handler: src/index.handler
+    events:
+      - http:
+          method: get
+          path: hello
