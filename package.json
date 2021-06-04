@@ -1,16 +1,18 @@
 {
-  "name": "api2",
+  "name": "api",
   "version": "1.0.0",
-  "description": "",
+  "description": "serverless type-script project",
   "main": "index.js",
   "scripts": {
     "start": "./bin/local.sh",
+    "deploy": "./bin/deploy.sh",
+    "remove": "./bin/remove.sh",
     "test": "jest",
     "pretest": "npm run lint",
     "lint": "npx eslint . --ext .ts,.tsx"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Riddhi Tilara <riddhi@itcutives.com>",
+  "license": "UNLICENSED",
   "devDependencies": {
     "@types/jest": "^26.0.23",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
